@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asparuh Tenev's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon-green.png"> <!-- Fix later-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container-wide flex-space-between">
+            <h1><a href="#" class="header-menu__title">PorfolioX</a></h1>
+            <ul class="header-menu__ul">
+                <li class="header-menu__li"><a href="#projects-area">Projects</a></li>
+                <li class="header-menu__li"><a href="#">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+
+    <main>
+        <section id="hero-area">
+            <div class="container-normal  flex-space-evenly">
+                <div class="hero-area__section">
+                    <p id="typing-text__one"></p>
+                    <br>
+                    <p id="typing-text__two"></p>
+                    <h1 class="hero-area__text">
+                        Hi, I'm <span class="color-red">Asparuh Tenev</span>,
+                        <br>
+                        an enthusiastic JS developer
+                    </h1>
+                    <a href="#projects-area" class="hero-area__call-to-action-btn">JavaScript Projects</a>
+                </div>
+                <div class="hero-area__section">
+                    <img src="images/me.png" alt="image_of_me" class="hero-area__img">
+                </div>
+            </div>
+        </section><!-- end of .hero-area-->
+
+
+
+        <section id="projects-area">
+            <div class="container-normal grid-projects-area">
+                <div class="project-card grid-col-span-2 test background-purple">
+                    <h3>A Simple "To-Do list" application that allows users to add, edit, and
+                        mark tasks as completed</h3>
+                    <a href="#" class="project-card__btn">Check it out -></a>
+                </div>
+                <div class="project-card background-dark-grey">
+                    <h3>An image Gallery that allows users to filter images based on
+                        different categories</h3>
+                    <a href="#" class="project-card__btn">Check it out -></a>
+                </div>
+                <div class="project-card background-grey" id="grid-vertical-card">
+                    <h3>My Git-hub resposatory</h3>
+                </div>
+                <div class="project-card background-blue">
+                    <h3>QR Code generator</h3>
+                    <a href="#" class="project-card__btn">Check it out -></a>
+                </div>
+                <div class="project-card grid-col-span-2 background-dark">
+                    <h3>A weather application using React, Redux, and the OpenWeather
+                        API</h3>
+                    <a href="#" class="project-card__btn">Check it out -></a>
+                </div>
+            </div>
+        </section><!-- end of .projects-area-->
+    </main>
+
+
+
+
+    <footer>
+        <div class="container-normal">
+        </div>
+    </footer>
+
+
+
+
+    <script src="js/type-animation.js"></script>
+</body>
+
+</html>
