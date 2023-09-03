@@ -1,9 +1,12 @@
 :root {
     --clr-white: #fff;
     --clr-dark-font: #212529;
+    --clr-dark-font-second: #3c3e41;
     --clr-grey: rgb(241, 241, 241);
     --clr-primary-red: #ff014f;
     --clr-primary-red-dimmed: #de0030;
+    --clr-aqua-blue: #48cfe7;
+    --clr-aqua-blue-second: #22b8d1;
     --clr-background-blue: rgb(56, 182, 255);
     --clr-background-purple: rgb(203, 108, 230);
     --clr-background-red: rgb(249, 86, 186);
@@ -42,7 +45,7 @@ a:hover {
 }
 
 h3 {
-    color: #fff;
+    color: var(--clr-white);
 }
 
 header {
@@ -52,8 +55,7 @@ header {
 footer {
     min-height: 80px;
     text-align: center;
-    /* background: #22b8d1; */
-    background: #48cfe7;
+    background: var(--clr-aqua-blue);
 }
 
 
@@ -89,7 +91,7 @@ footer {
 }
 
 .color-aqua {
-    color: #22b8d1;
+    color: var(--clr-aqua-blue-second);
 }
 
 .background-blue {
@@ -172,7 +174,7 @@ footer {
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #3c3e41;
+    color: var(--clr-dark-font-second);
 }
 
 .hero-area__call-to-action-btn {
@@ -232,7 +234,7 @@ footer {
 }
 
 .project-card__btn {
-    color: #fff;
+    color: var(--clr-white);
 }
 
 
