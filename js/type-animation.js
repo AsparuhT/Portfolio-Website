@@ -15,7 +15,7 @@ let textTwoCurrentCharNum = 0;
 
 
 
-const writingSpeed = 90;
+const writingSpeed = 80;
 let isPaused = false;
 
 
