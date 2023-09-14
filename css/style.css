@@ -63,7 +63,7 @@ header {
 footer {
     min-height: 80px;
     text-align: center;
-    background: var(--clr-aqua-blue);
+    background: var(--clr-grey);
 }
 
 
@@ -185,6 +185,17 @@ footer {
 
 
 
+  /* Footer */
+
+
+.footer-widget {
+    border: 1px solid black;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 40px 0 40px 0;
+}
+
+
 
 
 
@@ -205,9 +216,18 @@ footer {
     max-width: 1140px;
 }
 
+.flex {
+    display: flex;
+}
+
 .flex-space-between {
     display: flex;
     justify-content: space-between;
+}
+
+.flex-space-around {
+    display: flex;
+    justify-content: space-around;
 }
 
 .flex-space-evenly {

@@ -43,7 +43,7 @@ function typeText(textToType, indexCounter, textArea) {
  * Function to initiate the typing animation sequence.
  */
 function callText() {
-
+    // Make sure the text areas are cleared
     textAreaOne.textContent = '';
     textAreaTwo.textContent = '';
     // Call the first part of thext here
@@ -53,6 +53,7 @@ function callText() {
     setTimeout(() => typeText(textPartTwo, textTwoCurrentCharNum, textAreaTwo), 5000);
     // Start all over after 12s
     setTimeout(callText, 12000);
+
 }
 
 
