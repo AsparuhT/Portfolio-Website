@@ -28,9 +28,10 @@ let isPaused = false;
  */
 function typeText(textToType, indexCounter, textArea) {
     if (!isPaused && indexCounter < textToType.length) {
+        // Add each latter to the previous one, using their index number
         textArea.textContent += textToType[indexCounter];
         indexCounter++;
-
+        // Add each latter at the specified time interval
         setTimeout(() => typeText(textToType, indexCounter, textArea), writingSpeed)
     }
 }
@@ -45,12 +46,12 @@ function callText() {
 
     textAreaOne.textContent = '';
     textAreaTwo.textContent = '';
-
+    // Call the first part of thext here
     typeText(textPartOne, textOneCurrentCharNum, textAreaOne);
 
-
+    // Call the second part here, after 5s
     setTimeout(() => typeText(textPartTwo, textTwoCurrentCharNum, textAreaTwo), 5000);
-
+    // Start all over after 12s
     setTimeout(callText, 12000);
 }
 
@@ -64,5 +65,5 @@ document.addEventListener("visibilitychange", () => {
     }
 });
 
-
+// Initialize the typing animation
 callText();
