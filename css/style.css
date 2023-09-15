@@ -19,9 +19,13 @@
     --card-gradient: linear-gradient(145deg, #e2e8ec, #ffffff);
     --background-img-gradient: linear-gradient(120deg, rgb(56, 182, 255) 0%, rgb(203, 108, 230) 52%, rgb(249, 86, 186) 100%);
 
+    /* Contact form colors */
+    --clr--contacts-background : #7666c6;
+
 
     --fs-primary-14px: 0.875rem; /*  14px */
     --fs-primar-16px: 1rem; /*  16px */
+    --fs-large-20px: 1.25rem; /*  20px */
     --fs-large-28px: 1.75rem; /*  28px */
     --fs-large-34px: 2.125rem; /*  34px */
     --fs-large-40px: 2.5rem; /*  40px */
@@ -78,7 +82,7 @@ footer {
     margin: 21.44px 0 21.44px 0;
     line-height: 54.4px;
     display: flex;
-    gap: 16px;
+    gap: 20px;
     list-style: none;
     align-content: center;
     text-transform: uppercase;
@@ -203,7 +207,8 @@ footer {
 
 
 .container-wide,
-.container-normal {
+.container-normal,
+.container-narrow {
     margin: 0 auto;
     padding: 0 24px 0 24px;
 }
@@ -214,6 +219,10 @@ footer {
 
 .container-normal {
     max-width: 1140px;
+}
+
+.container-narrow {
+    max-width: 1040px;
 }
 
 .flex {
@@ -267,6 +276,65 @@ footer {
     background: var(--clr-background-dark-grey);
 }
 
+
+
+/* Contacts */
+
+.contacts {
+    padding: 120px 0;
+    background: 
+        linear-gradient(rgba(118, 102, 198, 0.9), rgba(118, 102, 198, 0.9)),
+        url("../images/contacts-background.webp") no-repeat center;
+
+}
+
+.contact-form {
+    display: flex; 
+    gap: 16px;
+    background: var(--clr-white);
+    padding: 16px;
+    border-radius: 20px;
+}
+
+.contact-form__image,
+.contact-form__form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form__form {
+    margin: 60px 0;
+}
+
+label {
+    color: var(--clr-dark-font-second);
+    font-weight: 800;
+    font-size: var(--fs-large-20px);
+    cursor: pointer;
+}
+
+
+input,
+textarea {
+    border: none;
+    background: var(--clr-grey);
+    width: 320px;
+    border-radius: 20px;
+    padding: 12px 20px;
+    min-width: 150px;
+    display: block;
+    margin-top: 14px;
+    color: var(--clr-dark-font-second);
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9ca1a8;
+    font-weight: 800;
+}
 
 
 
