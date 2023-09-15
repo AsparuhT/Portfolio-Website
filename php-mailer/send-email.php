@@ -14,8 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $recaptchaSecret . '&response=' . $recaptchaResponse);
     $responseData = json_decode($verifyResponse);
 
+    // Log the complete response (useful for debugging)
+    //error_log('reCAPTCHA response: ' . print_r($responseData, true));
+
     if (!$responseData->success) {
         // reCAPTCHA verification failed
+        echo var_dump($responseData);
         echo 'reCAPTCHA verification failed. Please try again.';
         exit;
     }

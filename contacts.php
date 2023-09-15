@@ -13,7 +13,6 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         function onSubmit(token) {
-            document.getElementById('g-recaptcha-response').value = token;
             document.getElementById("form").submit();
         }
     </script>
@@ -54,9 +53,6 @@
                         <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
 
                         <button class="contact-form__button g-recaptcha" data-sitekey="6LcjiCkoAAAAAJy9UmeuB4R2ve-zad3DALIZBvT6" data-callback="onSubmit">Send</button>
-                        <!-- Hidden reCaptcha field -->
-                        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-
                     </form>
                 </div>
 
