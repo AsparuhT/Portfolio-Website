@@ -281,7 +281,7 @@ footer {
 /* Contacts */
 
 .contacts {
-    padding: 120px 0;
+    padding: 90px 30px;
     background: 
         linear-gradient(rgba(118, 102, 198, 0.9), rgba(118, 102, 198, 0.9)),
         url("../images/contacts-background.webp") no-repeat center;
@@ -319,14 +319,13 @@ label {
 input,
 textarea {
     border: none;
-    background: var(--clr-grey);
-    width: 320px;
     border-radius: 20px;
-    padding: 12px 20px;
-    min-width: 150px;
-    display: block;
-    margin-top: 14px;
+    background: var(--clr-grey);
     color: var(--clr-dark-font-second);
+    width: 320px;
+    padding: 12px 20px;
+    margin-top: 14px;
+    display: block;
     outline: none;
 }
 
@@ -334,6 +333,24 @@ input::placeholder,
 textarea::placeholder {
     color: #9ca1a8;
     font-weight: 800;
+}
+
+.contact-form__button {
+    border: none;
+    background: var(--clr--contacts-background);
+    color: var(--clr-white);
+    font-weight: 800;
+    width: 320px;
+    border-radius: 20px;
+    padding: 12px 20px;
+    display: block;
+    margin-top: 28px;
+    outline: none;
+    cursor: pointer;
+}
+
+.contact-form__button:active {
+    background-color: #6A5AB9;
 }
 
 
