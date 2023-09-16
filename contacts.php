@@ -11,10 +11,10 @@
 
     <!-- Adding Google invisible reCaptcha -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
+    <!-- <script>
         function onSubmit(token) {
-            document.getElementById("form").submit();
-        }
+            // document.getElementById("form").submit();
+        } -->
     </script>
 
 </head>
@@ -39,20 +39,29 @@
         <section class="contacts">
             <div class="container-narrow contact-form">
 
+                <div id="successPopup" class="success-popup">
+                    <span id="closePopup" class="close-popup">&times;</span>
+                    Your message was submitted successfully !
+                </div>
+                <div id="overlay" class="overlay"></div>
+
 
                 <div class="contact-form__image">
                     <img src="images/contact-form.webp" alt="">
                 </div>
                 <div class="contact-form__form">
-                    <form action="php-mailer/send-email.php" method="POST" id="form">
+                    <form id="form" method="POST">
                         <label for="name">Get in touch:</label>
-                        <input name="name" type="text" placeholder="Name" id="name">
+                        <input name="name" type="text" placeholder="Name" id="name" required>
 
-                        <input name="email" type="email" placeholder="Email" required>
+                        <input name="email" type="email" placeholder="Email" id="email" required>
 
-                        <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
+                        <textarea name="message" cols="30" rows="10" placeholder="Message" id="message" required></textarea>
 
-                        <button class="contact-form__button g-recaptcha" data-sitekey="6LcjiCkoAAAAAJy9UmeuB4R2ve-zad3DALIZBvT6" data-callback="onSubmit">Send</button>
+                        <button class="contact-form__button g-recaptcha" data-sitekey="6LcjiCkoAAAAAJy9UmeuB4R2ve-zad3DALIZBvT6" data-callback="onSubmit">
+                            <div id="sendMsg">Send</div>
+                            <div class="spinner" id="spinner"></div>
+                        </button>
                     </form>
                 </div>
 
@@ -76,7 +85,7 @@
     </footer>
 
 
-
+    <script src="js/form-submission.js"></script>
 </body>
 
 </html>

@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$responseData->success) {
         // reCAPTCHA verification failed
-        echo var_dump($responseData);
         echo 'reCAPTCHA verification failed. Please try again.';
         exit;
     }
@@ -27,49 +26,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Get the form data and proceed with the email sending
 
-// Sanitize and validate user input
-$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+    // Sanitize and validate user input
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
 
 
-if (empty($name) || empty($email) || empty($message)) {
-    // Redirect or output an error message
-    die('Invalid input');
-}
+    if (empty($name) || empty($email) || empty($message)) {
+        // Redirect or output an error message
+        die('Invalid input');
+    }
 
 
 
-$mail = new PHPMailer(true);
+    $mail = new PHPMailer(true);
 
-try {
-    $mail->isSMTP();
-    $mail->SMTPAuth = true;
-    $mail->Host = "mail.atenev.com";
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
-    $mail->Username = "info@atenev.com";
-    $mail->Password = "tB@$3gm6@kg}";
-    
-    $mail->setFrom('info@atenev.com', "My website"); // The email address the form sends from
-    $mail->addAddress("info@atenev.com"); //This is the email address where the email will be sent to
-    $mail->addReplyTo($email, $name); // The replay will be sent to the filled in email address
+    try {
+        $mail->isSMTP();
+        $mail->SMTPAuth = true;
+        $mail->Host = "mail.atenev.com";
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+        $mail->Username = "info@atenev.com";
+        $mail->Password = "tB@$3gm6@kg}";
 
-
-    // The email subject
-    $mail->Subject = 'A new email from ' . $name;
-    // The email body
-    $mail->Body = 'Sent from: ' . $name . "\r\n \r\n" .
-               "Sender's email: " . $email . "\r\n \r\n" .
-               "Message: " . $message;
+        $mail->setFrom('info@atenev.com', "My website"); // The email address the form sends from
+        $mail->addAddress("info@atenev.com"); //This is the email address where the email will be sent to
+        $mail->addReplyTo($email, $name); // The replay will be sent to the filled in email address
 
 
-    $mail->send();
+        // The email subject
+        $mail->Subject = 'A new email from ' . $name;
+        // The email body
+        $mail->Body = 'Sent from: ' . $name . "\r\n \r\n" .
+            "Sender's email: " . $email . "\r\n \r\n" .
+            "Message: " . $message;
 
-    // echo "The Email has been sent successfully";
-    header("Location: ../contacts.php");  // Redirect after the email has been sent
-    exit(); // Terminate the script to make sure the header redirect works
-} catch (Exception $e) {
-    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-}
+
+        $mail->send();
+
+        // echo "The Email has been sent successfully";
+        // header("Location: ../contacts.php");   Redirect after the email has been sent
+        echo 'Success'; // Return success message
+        exit(); // Terminate the script to make sure the header redirect works
+    } catch (Exception $e) {
+        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    }
 }
