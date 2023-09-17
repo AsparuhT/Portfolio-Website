@@ -354,6 +354,15 @@ textarea::placeholder {
     background-color: #6A5AB9;
 }
 
+.errorMsg {
+    font-size: var(--fs-primary-14px);
+    color: var(--clr-primary-red);
+}
+
+.errorInput {
+    border: 2px solid var(--clr-primary-red);
+}
+
 
 
 .spinner {

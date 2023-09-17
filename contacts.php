@@ -52,11 +52,14 @@
                 <div class="contact-form__form">
                     <form id="form" method="POST">
                         <label for="name">Get in touch:</label>
-                        <input name="name" type="text" placeholder="Name" id="name" required>
+                        <input name="name" type="text" placeholder="Name" id="name">
+                        <div class="errorName errorMsg"></div>
 
                         <input name="email" type="email" placeholder="Email" id="email" required>
+                        <div class="errorEmail errorMsg"></div>
 
                         <textarea name="message" cols="30" rows="10" placeholder="Message" id="message" required></textarea>
+                        <div class="errorMessage errorMsg"></div>
 
                         <button class="contact-form__button g-recaptcha" data-sitekey="6LcjiCkoAAAAAJy9UmeuB4R2ve-zad3DALIZBvT6" data-callback="onSubmit">
                             <div id="sendMsg">Send</div>
@@ -84,8 +87,9 @@
         </div>
     </footer>
 
-
+    
     <script src="js/form-submission.js"></script>
+    <script src="js/form-validation.js"></script>
 </body>
 
 </html>

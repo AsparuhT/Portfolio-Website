@@ -34,7 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($name) || empty($email) || empty($message)) {
         // Redirect or output an error message
-        die('Invalid input');
+        echo 'Invalid input';
+        exit();
     }
 
 
