@@ -18,34 +18,42 @@ function clearError(input, errorEl) {
 }
 
 
+function validateEmail(email) {
+    // Regular expression to test a valid email address
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+}
+
 
 
 
 function validateInput() {
     let isValid = true; // Initialize flag as true
 
-    // First, check if the fields are empty
-    if(userName.value === '') {
+    if (userName.value === '') {
         setError(userName, errorName, 'This field is required');
         isValid = false;
-    } else if (userName.value.length > 150) { 
-        setError(userName, errorName, 'Maximum 100 characters');
+    } else if (userName.value.length > 150) {
+        setError(userName, errorName, 'Maximum 150 characters');
         isValid = false;
     }
 
-    if(userEmail.value === '') {
+    if (userEmail.value === '') {
         setError(userEmail, errorEmail, 'This field is required');
         isValid = false;
-    } else if (userEmail.value.length > 150) { 
-        setError(userEmail, errorEmail, 'Maximum 100 characters');
+    } else if (!validateEmail(userEmail.value)) { // Check if its actually an email
+        setError(userEmail, errorEmail, 'Invalid email address');
+        isValid = false;
+    } else if (userEmail.value.length > 150) {
+        setError(userEmail, errorEmail, 'Maximum 150 characters');
         isValid = false;
     }
 
-    if(userMessage.value === '') { 
+    if (userMessage.value === '') {
         setError(userMessage, errorMessage, 'This field is required');
         isValid = false;
-    } else if (userMessage.value.length > 1500) { 
-        setError(userMessage, errorMessage, 'Maximum 2000 characters');
+    } else if (userMessage.value.length > 1500) {
+        setError(userMessage, errorMessage, 'Maximum 1500 characters');
         isValid = false;
     }
 
@@ -57,20 +65,19 @@ function validateInput() {
 
 // Add event listener that remove warnings when the criteria is met
 userName.addEventListener('keyup', () => {
-    if(userName.value.length > 0 && userName.value.length < 151) {
+    if (userName.value.length > 0 && userName.value.length < 151) {
         clearError(userName, errorName);
     }
 });
 
 userEmail.addEventListener('keyup', () => {
-    if(userEmail.value.length > 0 && userEmail.value.length < 151) {
+    if (userEmail.value.length > 0 && userEmail.value.length < 151) {
         clearError(userEmail, errorEmail);
     }
 });
 
 userMessage.addEventListener('keyup', () => {
-    if(userMessage.value.length > 0 && userMessage.value.length < 1500) {
+    if (userMessage.value.length > 0 && userMessage.value.length < 1500) {
         clearError(userMessage, errorMessage);
     }
-
 });

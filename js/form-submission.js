@@ -4,17 +4,18 @@ const form = document.getElementById('form');
 // Function to run after reCAPTCHA validation
 function onSubmit(token) {
 
-    console.log('submit is clicked');
-
-    console.log(validateInput());
     // First, validate the inputs
-    if (!validateInput()) { // Reset reCAPTCHA
+    if (!validateInput()) {
+        if (typeof grecaptcha !== 'undefined') {
+            grecaptcha.reset(); // Reset reCAPTCHA
+        }
         return;
     }
+    
     // Capture the form data
     const formData = new FormData(form);
     // Clear the inputs after the form data is captured and start the spinner
-    // clearInputs();
+    clearInputs();
     showSpinner();
 
     fetch('php-mailer/send-email.php', {
@@ -25,8 +26,10 @@ function onSubmit(token) {
         .then(text => {
             // Hide spinner
             hideSpinner();
-            // showSuccessMessage();
+            showSuccessMessage();
             console.log(text);
+            // Reset the reCaptcha in order to allow resubmission
+            grecaptcha.reset();
         })
         .catch(error => {
             hideSpinner();
