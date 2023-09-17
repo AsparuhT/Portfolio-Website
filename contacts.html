@@ -50,7 +50,9 @@
                     <img src="images/contact-form.webp" alt="">
                 </div>
                 <div class="contact-form__form">
-                    <form id="form" method="POST">
+
+                                  <!-- FORM -->
+                    <form id="form" method="POST" action="php-mailer/send-email.php">
                         <label for="name">Get in touch:</label>
                         <input name="name" type="text" placeholder="Name" id="name">
                         <div class="errorName errorMsg"></div>
@@ -66,6 +68,7 @@
                             <div class="spinner" id="spinner"></div>
                         </button>
                     </form>
+                                  <!-- end of FORM -->
                 </div>
 
             </div>
