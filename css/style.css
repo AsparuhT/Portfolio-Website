@@ -525,28 +525,50 @@ textarea::placeholder {
     .project-card {
         margin-top: 24px;
     }
-}
 
+    /* Contacts */
 
-@media (max-width: 575px) {
-    .projects-layout {
+    .contact-form {
         flex-direction: column;
     }
 
-    .projects-nav,
-    .projects-grid {
+    .contact-form__image,
+    .contact-form__form {
         width: 100%;
     }
-}
 
 
 
-@media (max-width: 450px) {
-    .hero-area__text {
-        font-size: var(--fs-large-28px);
+    @media (max-width: 575px) {
+        .projects-layout {
+            flex-direction: column;
+        }
+
+        .projects-nav,
+        .projects-grid {
+            width: 100%;
+        }
+
+        .success-popup {
+            padding: 16px;
+        } 
     }
 
-    .hero-area__img {
-        border-radius: 60%;
+
+
+    @media (max-width: 450px) {
+        .hero-area__text {
+            font-size: var(--fs-large-28px);
+        }
+
+        .hero-area__img {
+            border-radius: 60%;
+        }
+
+        input,
+        textarea,
+        .contact-form__button {
+            width: 280px;
+        }
+
     }
-}
