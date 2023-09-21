@@ -124,6 +124,7 @@ footer {
     top: 33px;
     right: 40px;
     cursor: pointer;
+    display: none;
 }
 
 .menu-icon span {
@@ -615,14 +616,22 @@ textarea::placeholder {
         flex-direction: column;
     }
 
-    .header-menu__ul {
-        display: block;
+    #menu {
+        display: none;
+        /* Start with the menu hidden */
+        opacity: 0;
+        transition: opacity 0.3s ease;
         text-align: center;
     }
 
-    #menu.hidden {
-        display: none;
-        opacity: 0;
+    #menu.visible {
+        display: block;
+        opacity: 1;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
     }
 
     .header-menu__li {
