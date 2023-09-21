@@ -143,6 +143,10 @@ footer {
     font-weight: 600;
 }
 
+.hero-area__typing-animation {
+    min-height: 47.6px;
+}
+
 #typing-text__one,
 #typing-text__two {
     font-size: var(--fs-primary-14px);
@@ -219,8 +223,7 @@ footer {
     width: 60%;
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .project-card {
@@ -234,32 +237,17 @@ footer {
     cursor: pointer;
 }
 
-.project-card__btn {
-    color: var(--clr-white);
-}
-
 #card-1 {
-    grid-column: span 4;
-    grid-row: 1;
     background: url('../images/todo.webp') no-repeat;
     background-size: cover;
 }
 
 #card-2 {
-    grid-column: span 2;
-    grid-row: 1;
     background: url('../images/gallery.webp') no-repeat;
     background-size: cover;
 }
 
-#card-3 {
-    grid-column: span 2;
-    grid-row: 2;
-}
-
 #card-4 {
-    grid-column: span 4;
-    grid-row: 2;
     background: url('../images/weather.webp') no-repeat;
     background-size: cover;
 }
@@ -492,6 +480,10 @@ textarea::placeholder {
     justify-content: space-evenly;
 }
 
+.color-red {
+    color: var(--clr-primary-red);
+}
+
 
 
 
@@ -520,14 +512,31 @@ textarea::placeholder {
         font-size: var(--fs-large-34px);
     }
 
-    .grid-projects-area {
-        display: block;
+    .projects-nav {
+        width: 40%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 
     .project-card {
         margin-top: 24px;
     }
+}
 
+
+@media (max-width: 575px) {
+    .projects-layout {
+        flex-direction: column;
+    }
+
+    .projects-nav,
+    .projects-grid {
+        width: 100%;
+    }
 }
 
 
