@@ -22,9 +22,14 @@
 <body>
 
     <header>
-        <div class="container-wide flex-space-between">
-            <h1><a href="index.html" class="header-menu__title">ATenev</a></h1>
-            <ul class="header-menu__ul">
+        <div class="container-wide header-section">
+            <h1><a href="#" class="header-menu__title">ATenev</a></h1>
+            <div id="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="header-menu__ul hidden" id="menu">
                 <li class="header-menu__li"><a href="index.html#projects-area">Projects</a></li>
                 <li class="header-menu__li"><a href="#">About</a></li>
                 <li class="header-menu__li"><a href="#">Contacts</a></li>
@@ -88,6 +93,7 @@
     
     <script src="js/form-submission.js"></script>
     <script src="js/form-validation.js"></script>
+    <script src="js/hamburger-menu.js"></script>
 </body>
 
 </html>

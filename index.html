@@ -13,9 +13,14 @@
 <body>
 
     <header>
-        <div class="container-wide flex-space-between">
+        <div class="container-wide header-section">
             <h1><a href="#" class="header-menu__title">ATenev</a></h1>
-            <ul class="header-menu__ul">
+            <div id="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="header-menu__ul hidden" id="menu">
                 <li class="header-menu__li"><a href="#projects-area">Projects</a></li>
                 <li class="header-menu__li"><a href="#">About</a></li>
                 <li class="header-menu__li"><a href="contacts.html">Contacts</a></li>
@@ -30,8 +35,8 @@
         <section id="hero-area">
             <div class="container-normal  flex-space-evenly">
                 <div class="hero-area__section">
-                    <div class="hero-area__typing-animation" >
-                        <p id="typing-text__one"></p>                    
+                    <div class="hero-area__typing-animation">
+                        <p id="typing-text__one"></p>
                         <p id="typing-text__two"></p>
                     </div>
                     <h1 class="hero-area__text">
@@ -49,7 +54,7 @@
 
 
 
-        
+
         <section id="projects-area">
             <div class="container-normal flex projects-layout">
                 <div class="projects-nav">
@@ -70,9 +75,11 @@
                     <a href="https://gallery.atenev.com" target="_blank" class="project-card" id="card-2"></a>
                     <a href="https://github.com/AsparuhT" target="_blank" class="project-card" id="card-3">
                         <h3>My GitHub</h3>
-                        <i><p>Here you can find the code of these projects and clone/download it</p></i>
+                        <i>
+                            <p>Here you can find the code of these projects and clone/download it</p>
+                        </i>
                     </a>
-                    <a  href="https://weather.atenev.com" target="_blank" class="project-card" id="card-4"></a>
+                    <a href="https://weather.atenev.com" target="_blank" class="project-card" id="card-4"></a>
                 </div>
             </div>
         </section>
@@ -84,7 +91,7 @@
     <footer>
         <div class="container-normal footer-section">
             <h1><a href="#" class="footer-menu__title">ATenev</a></h1>
-                <i><a href="contacts.html">Get in touch by dropping a message here</a></i>
+            <i><a href="contacts.html">Get in touch by dropping a message here</a></i>
         </div>
     </footer>
 
@@ -93,6 +100,7 @@
 
     <script src="js/type-animation.js"></script>
     <script src="js/nav-hover-animation.js"></script>
+    <script src="js/hamburger-menu.js"></script>
 </body>
 
 </html>

@@ -91,6 +91,11 @@ footer {
 
 /*** Header ***/
 
+.header-section {
+    display: flex;
+    justify-content: space-between;
+}
+
 .header-menu__title {
     color: var(--clr-primary-red);
 }
@@ -106,6 +111,48 @@ footer {
     font-weight: 600;
     font-size: var(--fs-primary-14px);
 }
+
+/* Hamburger */
+
+#menu {
+    transition: all 0.3s ease;
+}
+
+
+.menu-icon {
+    position: absolute;
+    top: 33px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    background-color: var(--clr-dark-font);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+
+/* Styles for X icon */
+.menu-icon.toggle span:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+}
+
+.menu-icon.toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+.hidden {
+    display: none;
+}
+
 
 
 
@@ -245,6 +292,14 @@ footer {
 #card-2 {
     background: url('../images/gallery.webp') no-repeat;
     background-size: cover;
+}
+
+#card-3 {
+    text-align: center;
+}
+
+#card-3 p {
+    margin-top: 20px;
 }
 
 #card-4 {
@@ -536,39 +591,62 @@ textarea::placeholder {
     .contact-form__form {
         width: 100%;
     }
+}
 
 
+@media (max-width: 575px) {
+    .projects-layout {
+        flex-direction: column;
+        gap: 18px;
+    }
 
-    @media (max-width: 575px) {
-        .projects-layout {
-            flex-direction: column;
-        }
+    .projects-nav,
+    .projects-grid {
+        width: 100%;
+    }
 
-        .projects-nav,
-        .projects-grid {
-            width: 100%;
-        }
+    .success-popup {
+        padding: 16px;
+    }
 
-        .success-popup {
-            padding: 16px;
-        } 
+    /* Hamburger */
+
+    .header-section {
+        flex-direction: column;
+    }
+
+    .header-menu__ul {
+        display: block;
+        text-align: center;
+    }
+
+    #menu.hidden {
+        display: none;
+        opacity: 0;
+    }
+
+    .header-menu__li {
+        border-top: 1px solid var(--clr-primary-red);
     }
 
 
+}
 
-    @media (max-width: 450px) {
-        .hero-area__text {
-            font-size: var(--fs-large-28px);
-        }
 
-        .hero-area__img {
-            border-radius: 60%;
-        }
 
-        input,
-        textarea,
-        .contact-form__button {
-            width: 280px;
-        }
-
+@media (max-width: 450px) {
+    .hero-area__text {
+        font-size: var(--fs-large-28px);
     }
+
+    .hero-area__img {
+        border-radius: 60%;
+    }
+
+    input,
+    textarea,
+    .contact-form__button {
+        width: 280px;
+    }
+
+}
