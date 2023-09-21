@@ -71,14 +71,25 @@ header {
 }
 
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 300px;
-    text-align: center;
-    background-color: #565658;
+    background-color: var(--clr-darker-grey);
+
 }
 
 
-/*** Header ***/
 
+
+
+
+
+
+
+
+
+/*** Header ***/
 
 .header-menu__title {
     color: var(--clr-primary-red);
@@ -217,7 +228,7 @@ footer {
     min-height: 180px;
     min-width: 210px;
     padding: 16px;
-    border: 2px solid grey;
+    border: 2px solid #808080;
     box-shadow: var(--card-shadow);
     transition: 0.2s;
     cursor: pointer;
@@ -265,11 +276,15 @@ footer {
 
 /* Footer */
 
-.footer-widget {
-    border: 1px solid black;
-    min-width: 50px;
-    min-height: 50px;
-    margin: 40px 0 40px 0;
+.footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-menu__title {
+    color: var(--clr-primary-red-dimmed);
 }
 
 
