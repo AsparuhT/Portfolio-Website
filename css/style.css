@@ -49,7 +49,7 @@ body {
 a {
     text-decoration: none;
     color: var(--clr-dark-font);
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 a:hover {
@@ -57,7 +57,7 @@ a:hover {
 }
 
 h3 {
-    color: var(--clr-white);
+    color: var(--clr-dark-font)
 }
 
 header {
@@ -146,33 +146,71 @@ footer {
 }
 
 
-/*** Project Cards ***/
-
+/*** Project Area  ***/
 
 #projects-area {
     padding-top: clamp(20px, 7%, 130px);
     padding-bottom: clamp(20px, 5%, 100px);
 }
 
-.grid-projects-area {
+
+
+/*** Project Nav ***/
+
+.projects-nav {
+    width: 40%;
+    padding-right: 80px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.projects-nav ul {
+    border-right: 2px solid grey;
+    list-style: none;
+}
+
+.projects-nav ul li {
+    margin-top: 10px;
+}
+
+.projects-link  {
+    padding-right: 20px;
+    font-size: var(--fs-large-20px);
+}
+
+/*** Project Cards ***/
+
+
+
+.projects-grid {
+    width: 60%;
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr); 
 }
 
-.grid-col-span-2 {
-    grid-column: span 2;
+#card-1 {
+    grid-column: span 4; 
+    grid-row: 1;
 }
 
-#grid-vertical-card {
-    grid-column-start: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
+#card-2 {
+    grid-column: span 2; 
+    grid-row: 1; 
 }
 
-#grid-vertical-card h3 {
-    color: var(--clr-dark-font);
+#card-3 {
+    grid-column: span 2; 
+    grid-row: 2;
 }
+
+#card-4 {
+    grid-column: span 4;
+    grid-row: 2; 
+}
+
 
 .project-card {
     border-radius: 8px;
@@ -181,6 +219,8 @@ footer {
     padding: 16px;
     text-align: center;
     box-shadow: var(--card-shadow);
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .project-card__btn {
