@@ -55,7 +55,7 @@
                 </div>
                 <div class="contact-form__form">
 
-                                  <!-- FORM -->
+                    <!-- FORM -->
                     <form id="form" method="POST" action="php-mailer/send-email.php">
                         <label for="name">Get in touch:</label>
                         <input name="name" type="text" placeholder="Name" id="name">
@@ -64,15 +64,17 @@
                         <input name="email" type="email" placeholder="Email" id="email" required>
                         <div class="errorEmail errorMsg"></div>
 
-                        <textarea name="message" cols="30" rows="10" placeholder="Message" id="message" required></textarea>
+                        <textarea name="message" cols="30" rows="10" placeholder="Message" id="message"
+                            required></textarea>
                         <div class="errorMessage errorMsg"></div>
 
-                        <button class="contact-form__button g-recaptcha" data-sitekey="6LcjiCkoAAAAAJy9UmeuB4R2ve-zad3DALIZBvT6" data-callback="onSubmit">
+                        <button class="contact-form__button g-recaptcha"
+                            data-sitekey="6LcjiCkoAAAAAJy9UmeuB4R2ve-zad3DALIZBvT6" data-callback="onSubmit">
                             <div id="sendMsg">Send</div>
                             <div class="spinner" id="spinner"></div>
                         </button>
                     </form>
-                                  <!-- end of FORM -->
+                    <!-- end of FORM -->
                 </div>
 
             </div>
@@ -85,14 +87,20 @@
     <footer>
         <div class="container-normal footer-section">
             <h1><a href="index.html" class="footer-menu__title">ATenev</a></h1>
-                <i><a href="index.html#projects-area">Check out some of my projects here</a></i>
+            <i><a href="index.html#projects-area">Check out some of my projects here</a></i>
         </div>
     </footer>
 
-    
-    <script src="js/form-submission.js"></script>
+
+
+
+    <!-- Normal js -->
+    <!-- <script src="js/form-submission.js"></script>
     <script src="js/form-validation.js"></script>
-    <script src="js/hamburger-menu.js"></script>
+    <script src="js/hamburger-menu.js"></script> -->
+
+    <!-- Minified js -->
+    <script src="uglify-js/contacts-bundle.min.js"></script>
 </body>
 
 </html>
