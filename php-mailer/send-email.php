@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $recaptchaSecret . '&response=' . $recaptchaResponse);
     $responseData = json_decode($verifyResponse);
 
-    // Log the complete response (useful for debugging)
+    // Log the complete response
     //error_log('reCAPTCHA response: ' . print_r($responseData, true));
 
     if (!$responseData->success) {
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     if (empty($name) || empty($email) || empty($message)) {
-        // Redirect or output an error message
+        // Exit if no values
         echo 'Invalid input';
         exit();
     }
@@ -66,10 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $mail->send();
 
-        // echo "The Email has been sent successfully";
-        // header("Location: ../contacts.php");   Redirect after the email has been sent
+
         echo 'Success'; // Return success message
-        exit(); // Terminate the script to make sure the header redirect works
+        exit();
     } catch (Exception $e) {
         echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
     }

@@ -16,16 +16,13 @@ let textTwoCurrentCharNum = 0;
 
 
 const writingSpeed = 80;
-let isPaused = false;
+let isPaused = false; 
 
 
 /**
  * Function to perform the typing animation for the given text.
- *
- * @param {string} textToType - The text to type.
- * @param {number} indexCounter - The current character index.
- * @param {Element} textArea - The HTML element where the text will be displayed.
  */
+
 function typeText(textToType, indexCounter, textArea) {
     if (!isPaused && indexCounter < textToType.length) {
         // Add each latter to the previous one, using their index number

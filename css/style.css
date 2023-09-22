@@ -4,6 +4,7 @@
     --clr-dark-font-second: #3c3e41;
     --clr-grey: rgb(241, 241, 241);
     --clr-darker-grey: rgb(219, 219, 219);
+    --clr-darkest-grey: #808080;
     --clr-primary-red: #ff014f;
     --clr-primary-red-dimmed: #de0030;
     --clr-aqua-blue: #48cfe7;
@@ -23,18 +24,12 @@
     --clr--contacts-background: #7666c6;
 
 
-    --fs-primary-14px: 0.875rem;
-    /*  14px */
-    --fs-primar-16px: 1rem;
-    /*  16px */
-    --fs-large-20px: 1.25rem;
-    /*  20px */
-    --fs-large-28px: 1.75rem;
-    /*  28px */
-    --fs-large-34px: 2.125rem;
-    /*  34px */
-    --fs-large-40px: 2.5rem;
-    /*  40px */
+    --fs-primary-14px: 0.875rem; /*  14px */
+    --fs-primar-16px: 1rem; /*  16px */
+    --fs-large-20px: 1.25rem; /*  20px */
+    --fs-large-28px: 1.75rem; /*  28px */
+    --fs-large-34px: 2.125rem; /*  34px */
+    --fs-large-40px: 2.5rem; /*  40px */
 }
 
 * {
@@ -150,10 +145,6 @@ footer {
     transform: rotate(-45deg) translateY(-10px);
 }
 
-.hidden {
-    display: none;
-}
-
 
 
 
@@ -251,7 +242,7 @@ footer {
 }
 
 .projects-nav ul {
-    border-right: 2px solid grey;
+    border-right: 2px solid var(--clr-darkest-grey);
     list-style: none;
 }
 
@@ -279,7 +270,7 @@ footer {
     min-height: 180px;
     min-width: 210px;
     padding: 16px;
-    border: 2px solid #808080;
+    border: 2px solid var(--clr-darkest-grey);
     box-shadow: var(--card-shadow);
     transition: 0.2s;
     cursor: pointer;
@@ -429,9 +420,7 @@ textarea::placeholder {
 
 .spinner {
     border: 5px solid #f3f3f3;
-    /* Light grey */
     border-top: 5px solid #4CAF50;
-    /* Blue */
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -618,15 +607,11 @@ textarea::placeholder {
 
     #menu {
         display: none;
-        /* Start with the menu hidden */
-        opacity: 0;
-        transition: opacity 0.3s ease;
         text-align: center;
     }
 
     #menu.visible {
         display: block;
-        opacity: 1;
     }
 
     .menu-icon {

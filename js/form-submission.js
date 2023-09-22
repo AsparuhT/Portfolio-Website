@@ -8,6 +8,7 @@ function onSubmit(token) {
     if (!validateInput()) {
         if (typeof grecaptcha !== 'undefined') {
             grecaptcha.reset(); // Reset reCAPTCHA
+        // If the reCatcha is not reset here, the form will not resubmit after the first attempt
         }
         return;
     }
@@ -85,12 +86,6 @@ function showSuccessMessage() {
     // Show overlay and popup
     overlay.style.display = 'block';
     successPopup.style.display = 'block';
-
-
-    // Hide the success message after 3 seconds
-    // setTimeout(() => {
-    //   successPopup.style.display = 'none';
-    // }, 3000);
 }
 
 

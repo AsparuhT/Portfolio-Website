@@ -5,7 +5,7 @@ const errorEmail = document.querySelector('.errorEmail');
 const errorMessage = document.querySelector('.errorMessage');
 
 
-function setError(input, errorEl, errorMsg, isValid) {
+function setError(input, errorEl, errorMsg) {
     input.classList.add('errorInput');
     errorEl.style.display = 'block';
     errorEl.textContent = errorMsg;
