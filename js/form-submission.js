@@ -1,4 +1,4 @@
-// Get reference to the form first
+// Get reference to the form
 const form = document.getElementById('form');
 
 // Function to run after reCAPTCHA validation
@@ -19,6 +19,7 @@ function onSubmit(token) {
     clearInputs();
     showSpinner();
 
+    // Pass the data to the php file
     fetch('php-mailer/send-email.php', {
         method: 'POST',
         body: formData
@@ -27,8 +28,7 @@ function onSubmit(token) {
         .then(text => {
             // Hide spinner
             hideSpinner();
-            showSuccessMessage();
-            console.log(text);
+            showSuccessMessage(); // show success popup overlay
             // Reset the reCaptcha in order to allow resubmission
             grecaptcha.reset();
         })
@@ -65,41 +65,34 @@ function clearInputs() {
 
 // Hide and show the spinnner
 const spinner = document.getElementById("spinner");
-const sendMsg = document.getElementById("sendMsg");
+const sendMsg = document.getElementById("sendMsg"); // the Send button
 function showSpinner() {
-    sendMsg.style.display = 'none';         // Clear the existing text
+    sendMsg.style.display = 'none';         // remove the Send' button text
     spinner.style.display = 'inline-block'; // Show the spinner
 }
 
 function hideSpinner() {
-    sendMsg.style.display = 'inline-block'; // Put the text back
+    sendMsg.style.display = 'inline-block'; // Put the button's text back to Send
     spinner.style.display = 'none';         // Hide the spinner
 }
 
 
 
-// Add a popup message
-function showSuccessMessage() {
-    const successPopup = document.getElementById('successPopup');
-    const overlay = document.getElementById('overlay');
+// Get the overlay and popup elements
+const overlay = document.getElementById('overlay');
+const successPopup = document.getElementById('successPopup');
+// Get the close button element
+const closePopupButton = document.getElementById('closePopup');
 
+// Add a popup message and overlay
+function showSuccessMessage() {
     // Show overlay and popup
     overlay.style.display = 'block';
     successPopup.style.display = 'block';
 }
 
 
-
-/*  Close the Popup and remove the overlay */
-
-// Get the overlay and popup elements
-const overlay = document.getElementById('overlay');
-const successPopup = document.getElementById('successPopup');
-
-// Get the close button element
-const closePopupButton = document.getElementById('closePopup');
-
-// Function to hide popup and overlay
+// Close the popup and remove the overlay
 function hidePopup() {
   overlay.style.display = 'none';
   successPopup.style.display = 'none';
