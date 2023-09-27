@@ -1,5 +1,6 @@
-// Get reference to the form
+// Get reference to the form and its error div
 const form = document.getElementById('form');
+const formError = document.querySelector('.formError');
 
 // Function to run after reCAPTCHA validation
 function onSubmit(token) {
@@ -24,16 +25,24 @@ function onSubmit(token) {
         method: 'POST',
         body: formData
     })
-        .then(res => res.text())
+        .then(res => {
+            if(!res.ok) {
+                throw new Error('Form could not be submitted');
+            }
+            return res.text();
+        })
         .then(text => {
             // Hide spinner
             hideSpinner();
+            formError.textContent = ''; // clear the form error if it was there
             showSuccessMessage(); // show success popup overlay
             // Reset the reCaptcha in order to allow resubmission
             grecaptcha.reset();
         })
         .catch(error => {
+            // let the user know there was an error
             hideSpinner();
+            formError.textContent = 'Form could not be submitted. Try again later.';
             console.log('There was a problem with the fetch operation:', error);
         });
 
