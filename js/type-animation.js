@@ -3,12 +3,14 @@
  *
  */
 
+// Ref to the elements where the text will apepar
 const textAreaOne = document.querySelector('#typing-text__one');
 const textAreaTwo = document.querySelector('#typing-text__two');
 
+// The text that willl be written on the page
+const textPartOne = "Welcome to my portfolio !"; // line one
+const textPartTwo = "Grab a coffee and let's look around";  // line two
 
-const textPartOne = "Welcome to my portfolio !";
-const textPartTwo = "Grab a coffee and let's look around";
 // Create counter, staring at 0, so we can add a check against the lenght of the text 
 let textOneCurrentCharNum = 0;
 let textTwoCurrentCharNum = 0;
@@ -16,7 +18,7 @@ let textTwoCurrentCharNum = 0;
 
 
 const writingSpeed = 80;
-let isPaused = false; 
+let isPaused = false; // flag used for the document's visibilitychange
 
 
 /**
@@ -50,7 +52,6 @@ function callText() {
     setTimeout(() => typeText(textPartTwo, textTwoCurrentCharNum, textAreaTwo), 5000);
     // Start all over after 12s
     setTimeout(callText, 12000);
-
 }
 
 
