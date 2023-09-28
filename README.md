@@ -1,6 +1,6 @@
 # Portfolio Website
 
-This is a  portfolio website with a contact form. It has provides links to other projects as well as to my GitHub account and has a contact form which can send your messages to me.
+This is a  portfolio website with a contact form. It provides links to other projects I have made as well as to my GitHub account, where the code for these projectas can be found. The user exprience is enchansed with cool JavaScript animations and a picture of myself. Also ,it has a contact form.
 
 ## Table of Contents
 
