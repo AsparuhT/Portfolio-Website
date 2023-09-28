@@ -24,7 +24,7 @@ This is a  portfolio website with a contact form. It provides links to other pro
    
 Or just download it as ZIP archive from **Code -> Download ZIP**
 
-In order for you to test its form locally you will need local server environment such as MAMP or WAMP
+To test the contact form locally you will need local server environment such as MAMP or WAMP
 
 ## Usage
 
